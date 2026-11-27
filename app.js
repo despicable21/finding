@@ -233,7 +233,6 @@
       saveDemoNick(tg);
       const questions = DEMO_QUESTIONS.map((q) => ({
         id: q.id,
-        category: q.category,
         question: q.question,
         image: q.image,
         options: q.options
@@ -790,7 +789,6 @@
       <div class="screen">
         <div id="blitz-hud" class="blitz-hud">
           <div class="blitz-hud-top">
-            <span class="blitz-cat">${escapeHtml(q.category || "БЛИЦ")}</span>
             <span id="blitz-timer" class="blitz-timer">${BLITZ_SECONDS.toFixed(1)}s</span>
           </div>
           <div class="blitz-bar-track">

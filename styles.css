@@ -541,7 +541,7 @@ body {
 .blitz-hud-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   font-family: var(--font-mono);
 }
 
