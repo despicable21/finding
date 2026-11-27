@@ -57,7 +57,7 @@
       id: "education",
       eyebrow: "БАЗА",
       title: "Образование",
-      hint: "На кого ты учился (и пригодилось ли это в жизни)?",
+      hint: "На кого ты учился?",
       type: "text",
       placeholder: ""
     },
@@ -278,7 +278,6 @@
         `🏠 Быт: ${livingText}`,
         `🎬 Любимое: ${a.favorite}`,
         `⚠️ Привычки: ${habitsArr.join(", ") || "—"}`,
-        `🎯 Ищет: ${a.intentions}`,
         ``,
         `⏱ БЛИЦ: ${correctCount} из ${demoQs.length}`,
         ...lines
@@ -466,7 +465,7 @@
       `;
     }
 
-    const showNextBtn = step.type !== "single";
+    const showNextBtn = true;
 
     stageEl.innerHTML = `
       <div class="screen">
@@ -502,8 +501,10 @@
       stageEl.querySelectorAll(".option-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
           state.answers[step.id] = btn.getAttribute("data-value");
+          stageEl.querySelectorAll(".option-btn").forEach((b) => b.classList.remove("is-selected"));
           btn.classList.add("is-selected");
-          setTimeout(() => goNextFromBlock1(), 140);
+          const errEl = document.getElementById("step-error");
+          if (errEl) errEl.classList.add("hidden");
         });
       });
     } else if (step.type === "single_with_other") {
@@ -520,7 +521,6 @@
             otherInput.focus();
           } else {
             otherWrap.classList.add("hidden");
-            setTimeout(() => goNextFromBlock1(), 140);
           }
         });
       });
@@ -629,6 +629,13 @@
     if (step.type === "text" || step.type === "textarea") {
       if (!state.answers[step.id] || state.answers[step.id].length < 2) {
         showError("Пожалуйста, напиши хотя бы пару слов.");
+        return;
+      }
+    }
+
+    if (step.type === "single") {
+      if (!state.answers[step.id]) {
+        showError("Выбери один из вариантов.");
         return;
       }
     }
