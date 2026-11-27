@@ -485,7 +485,7 @@ body {
   color: #061017;
   -webkit-text-fill-color: #061017;
   border: 1px solid var(--accent);
-  box-shadow: 0 0 0 1px rgba(0, 255, 156, 0.4), 0 0 28px rgba(0, 255, 156, 0.45);
+  box-shadow: 0 0 0 1px rgba(0, 255, 156, 0.25), 0 0 14px rgba(0, 255, 156, 0.24);
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -493,7 +493,7 @@ body {
 .btn--primary:hover:not(:disabled) {
   background-color: #3DFFB4;
   background-image: linear-gradient(135deg, #3DFFB4, #3DFFB4);
-  box-shadow: 0 0 28px rgba(0, 255, 156, 0.45);
+  box-shadow: 0 0 18px rgba(0, 255, 156, 0.32);
   transform: translateY(-1px);
 }
 
