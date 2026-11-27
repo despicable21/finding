@@ -440,8 +440,10 @@ body {
 }
 
 .option-btn.is-selected .option-key {
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: linear-gradient(135deg, #00FF9C, #00FF9C);
   color: #061017;
+  -webkit-text-fill-color: #061017;
   border-color: var(--accent);
 }
 
@@ -478,8 +480,10 @@ body {
 
 .btn--primary {
   flex: 1;
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: linear-gradient(135deg, #00FF9C, #00FF9C);
   color: #061017;
+  -webkit-text-fill-color: #061017;
   border: 1px solid var(--accent);
   box-shadow: 0 0 0 1px rgba(0, 255, 156, 0.4), 0 0 28px rgba(0, 255, 156, 0.45);
   -webkit-transform: translateZ(0);
@@ -487,7 +491,8 @@ body {
 }
 
 .btn--primary:hover:not(:disabled) {
-  background: #3DFFB4;
+  background-color: #3DFFB4;
+  background-image: linear-gradient(135deg, #3DFFB4, #3DFFB4);
   box-shadow: 0 0 28px rgba(0, 255, 156, 0.45);
   transform: translateY(-1px);
 }
